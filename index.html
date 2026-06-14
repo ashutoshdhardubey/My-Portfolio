@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ashutosh Dhar Dubey — MCA Graduate & Software Developer. Explore my anti-gravity 3D portfolio showcasing projects in CNN, facial recognition, and full-stack development.">
+    <meta name="keywords" content="Ashutosh Dhar Dubey, Software Developer, MCA, Portfolio, Java, Python, ReactJS, AWS">
+    <meta name="author" content="Ashutosh Dhar Dubey">
+    <meta name="theme-color" content="#0a0a0f">
+    <title>Ashutosh Dhar Dubey — Anti-Gravity Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Three.js via CDN (r162 for MeshPhysicalMaterial, SRGBColorSpace support) -->
+    <script src="https://unpkg.com/three@0.162.0/build/three.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Noise Overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- 3D Canvas Container -->
+    <div id="three-container" aria-hidden="true"></div>
+
+    <!-- Custom Cursor Glow -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-logo">
+            <span class="nav-bracket">{</span>
+            <span class="nav-name">AD</span>
+            <span class="nav-bracket">}</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+            <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+            <a href="#experience" class="nav-link" data-section="experience">Journey</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            <span class="status-text">Available for hire</span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <!-- ============================== -->
+    <!-- SECTION 1: HERO               -->
+    <!-- ============================== -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-content">
+            <div class="hero-greeting glass-panel" data-float-delay="0">
+                <span class="greeting-icon">👋</span>
+                <span class="greeting-text">Hello, World!</span>
+            </div>
+
+            <h1 class="hero-name" data-float-delay="200">
+                <span class="name-line name-first">Ashutosh</span>
+                <span class="name-line name-middle">Dhar</span>
+                <span class="name-line name-last">Dubey</span>
+            </h1>
+
+            <div class="hero-title-wrapper" data-float-delay="400">
+                <div class="hero-title-badge">
+                    <span class="badge-dot"></span>
+                    <span class="badge-text">Master of Computer Applications</span>
+                </div>
+                <p class="hero-subtitle">Software Developer</p>
+            </div>
+
+            <div class="hero-cta-group" data-float-delay="600">
+                <a href="#projects" class="cta-primary" id="cta-view-work">
+                    <span class="cta-text">View My Work</span>
+                    <span class="cta-arrow">→</span>
+                </a>
+                <a href="#contact" class="cta-secondary" id="cta-contact">
+                    <span class="cta-text">Get In Touch</span>
+                </a>
+            </div>
+
+            <div class="hero-scroll-indicator" data-float-delay="800">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
+        </div>
+
+        <!-- Floating decorative code snippets -->
+        <div class="floating-code floating-code-1 glass-panel" aria-hidden="true" data-parallax="0.02">
+            <code>const dream = <span class="code-keyword">await</span> build();</code>
+        </div>
+        <div class="floating-code floating-code-2 glass-panel" aria-hidden="true" data-parallax="0.03">
+            <code><span class="code-keyword">class</span> Developer <span class="code-bracket">{</span></code>
+        </div>
+        <div class="floating-code floating-code-3 glass-panel" aria-hidden="true" data-parallax="0.015">
+            <code>System.out.println(<span class="code-string">"🚀"</span>);</code>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SECTION 2: SKILLS ORBIT        -->
+    <!-- ============================== -->
+    <section id="skills" class="section skills-section">
+        <div class="section-header">
+            <span class="section-tag">02</span>
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">Technologies I architect solutions with</p>
+        </div>
+
+        <div class="skills-orbit-container">
+            <div class="orbit-center">
+                <div class="orbit-core glass-panel">
+                    <span class="core-icon">⚡</span>
+                    <span class="core-label">Full Stack</span>
+                </div>
+            </div>
+
+            <!-- Orbital rings (visual only) -->
+            <div class="orbit-ring orbit-ring-1" aria-hidden="true"></div>
+            <div class="orbit-ring orbit-ring-2" aria-hidden="true"></div>
+            <div class="orbit-ring orbit-ring-3" aria-hidden="true"></div>
+
+            <!-- Skill planets -->
+            <div class="skill-planet" data-skill="java" data-orbit="1" data-angle="0" data-speed="0.3">
+                <div class="planet-body glass-panel">
+                    <span class="planet-icon">☕</span>
+                    <span class="planet-label">Java</span>
+                </div>
+                <div class="planet-glow"></div>
+            </div>
+
+            <div class="skill-planet" data-skill="python" data-orbit="1" data-angle="120" data-speed="0.35">
+                <div class="planet-body glass-panel">
+                    <span class="planet-icon">🐍</span>
+                    <span class="planet-label">Python</span>
+                </div>
+                <div class="planet-glow"></div>
+            </div>
+
+            <div class="skill-planet" data-skill="react" data-orbit="1" data-angle="240" data-speed="0.25">
+                <div class="planet-body glass-panel">
+                    <span class="planet-icon">⚛️</span>
+                    <span class="planet-label">ReactJS</span>
+                </div>
+                <div class="planet-glow"></div>
+            </div>
+
+            <div class="skill-planet" data-skill="php" data-orbit="2" data-angle="60" data-speed="0.2">
+                <div class="planet-body glass-panel">
+                    <span class="planet-icon">🐘</span>
+                    <span class="planet-label">PHP</span>
+                </div>
+                <div class="planet-glow"></div>
+            </div>
+
+            <div class="skill-planet" data-skill="sql" data-orbit="2" data-angle="180" data-speed="0.22">
+                <div class="planet-body glass-panel">
+                    <span class="planet-icon">🗄️</span>
+                    <span class="planet-label">SQL</span>
+                </div>
+                <div class="planet-glow"></div>
+            </div>
+
+            <div class="skill-planet" data-skill="cpp" data-orbit="3" data-angle="30" data-speed="0.15">
+                <div class="planet-body glass-panel">
+                    <span class="planet-icon">⚙️</span>
+                    <span class="planet-label">C++</span>
+                </div>
+                <div class="planet-glow"></div>
+            </div>
+
+            <div class="skill-planet" data-skill="aws" data-orbit="3" data-angle="210" data-speed="0.18">
+                <div class="planet-body glass-panel">
+                    <span class="planet-icon">☁️</span>
+                    <span class="planet-label">AWS</span>
+                </div>
+                <div class="planet-glow"></div>
+            </div>
+        </div>
+
+        <!-- Skill detail panel (appears on click) -->
+        <div id="skill-detail" class="skill-detail glass-panel" hidden>
+            <button class="skill-detail-close" aria-label="Close skill detail">&times;</button>
+            <h3 class="skill-detail-name" id="skill-detail-name"></h3>
+            <p class="skill-detail-desc" id="skill-detail-desc"></p>
+            <div class="skill-detail-bar">
+                <div class="skill-bar-fill" id="skill-bar-fill"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SECTION 3: PROJECTS GALLERY    -->
+    <!-- ============================== -->
+    <section id="projects" class="section projects-section">
+        <div class="section-header">
+            <span class="section-tag">03</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Crafted with precision, powered by innovation</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1: Plant Disease Detector -->
+            <article class="project-card glass-card" id="project-plant" data-float-delay="0">
+                <div class="project-card-visual">
+                    <div class="project-hologram project-hologram-leaf">
+                        <div class="hologram-scan-line" aria-hidden="true"></div>
+                        <div class="leaf-icon">🌿</div>
+                        <div class="neural-grid" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card-content">
+                    <div class="project-tags">
+                        <span class="project-tag">CNN</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">TensorFlow</span>
+                    </div>
+                    <h3 class="project-title">Plant Disease Detector</h3>
+                    <p class="project-description">
+                        Deep learning CNN model that identifies plant diseases from leaf images with high accuracy. 
+                        Trained on thousands of samples to provide real-time diagnosis for agricultural solutions.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">95%</span>
+                            <span class="metric-label">Accuracy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">38</span>
+                            <span class="metric-label">Disease Classes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card-glow" aria-hidden="true"></div>
+            </article>
+
+            <!-- Project 2: Attendance Recorder -->
+            <article class="project-card glass-card" id="project-attendance" data-float-delay="200">
+                <div class="project-card-visual">
+                    <div class="project-hologram project-hologram-camera">
+                        <div class="camera-lens">
+                            <div class="lens-iris" aria-hidden="true"></div>
+                            <div class="lens-ring" aria-hidden="true"></div>
+                            <div class="lens-ring lens-ring-2" aria-hidden="true"></div>
+                        </div>
+                        <div class="face-wireframe" aria-hidden="true">
+                            <svg viewBox="0 0 100 100" width="80" height="80">
+                                <ellipse cx="50" cy="45" rx="30" ry="38" fill="none" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+                                <circle cx="38" cy="38" r="5" fill="none" stroke="rgba(0,212,255,0.6)" stroke-width="1"/>
+                                <circle cx="62" cy="38" r="5" fill="none" stroke="rgba(0,212,255,0.6)" stroke-width="1"/>
+                                <path d="M40 58 Q50 66 60 58" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+                                <line x1="50" y1="45" x2="50" y2="55" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card-content">
+                    <div class="project-tags">
+                        <span class="project-tag">OpenCV</span>
+                        <span class="project-tag">Face Recognition</span>
+                        <span class="project-tag">Python</span>
+                    </div>
+                    <h3 class="project-title">Auto Attendance Recorder</h3>
+                    <p class="project-description">
+                        Automated attendance system using facial recognition technology. Real-time face detection 
+                        and matching against enrolled database for seamless, contactless attendance tracking.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">Real-time</span>
+                            <span class="metric-label">Detection</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">99%</span>
+                            <span class="metric-label">Recognition</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card-glow" aria-hidden="true"></div>
+            </article>
+
+            <!-- Project 3: Invoice Management -->
+            <article class="project-card glass-card" id="project-invoice" data-float-delay="400">
+                <div class="project-card-visual">
+                    <div class="project-hologram project-hologram-invoice">
+                        <div class="invoice-stack">
+                            <div class="invoice-sheet invoice-sheet-1" aria-hidden="true"></div>
+                            <div class="invoice-sheet invoice-sheet-2" aria-hidden="true"></div>
+                            <div class="invoice-sheet invoice-sheet-3" aria-hidden="true"></div>
+                        </div>
+                        <div class="coin-drop" aria-hidden="true">
+                            <span class="coin coin-1">💰</span>
+                            <span class="coin coin-2">💰</span>
+                            <span class="coin coin-3">💰</span>
+                        </div>
+                        <div class="lockbox" aria-hidden="true">🔒</div>
+                    </div>
+                </div>
+                <div class="project-card-content">
+                    <div class="project-tags">
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">Full-Stack</span>
+                    </div>
+                    <h3 class="project-title">Invoice Management System</h3>
+                    <p class="project-description">
+                        Comprehensive digital invoicing platform with automated billing, payment tracking, 
+                        and financial reporting. Secure document management with role-based access control.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">500+</span>
+                            <span class="metric-label">Invoices/mo</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">RBAC</span>
+                            <span class="metric-label">Security</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card-glow" aria-hidden="true"></div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SECTION 4: EXPERIENCE TIMELINE -->
+    <!-- ============================== -->
+    <section id="experience" class="section experience-section">
+        <div class="section-header">
+            <span class="section-tag">04</span>
+            <h2 class="section-title">Journey & Experience</h2>
+            <p class="section-subtitle">The path that shaped my craft</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-wire" aria-hidden="true">
+                <div class="timeline-wire-glow"></div>
+            </div>
+
+            <!-- Experience Node: GAIL India Limited -->
+            <div class="timeline-node timeline-node-right" data-year="2026">
+                <div class="timeline-dot">
+                    <div class="dot-pulse" aria-hidden="true"></div>
+                </div>
+                <div class="timeline-card glass-panel">
+                    <div class="timeline-card-header">
+                        <span class="timeline-type experience-type">Experience</span>
+                        <span class="timeline-date">Feb 2026 – Present</span>
+                    </div>
+                    <h3 class="timeline-title">Apprenticeship</h3>
+                    <h4 class="timeline-org">GAIL India Limited</h4>
+                    <p class="timeline-desc">
+                        Ongoing apprenticeship at GAIL (India) Limited, one of India's leading natural gas 
+                        processing and distribution companies. Gaining hands-on industry experience in 
+                        enterprise-level systems and professional workflows.
+                    </p>
+                    <div class="timeline-visual" aria-hidden="true">
+                        <div class="browser-mockup">
+                            <div class="browser-bar">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-content">
+                                <div class="code-line"><span class="hl-tag">🏭</span> GAIL India Limited</div>
+                                <div class="code-line indent"><span class="hl-attr">Status:</span> <span class="hl-string">Currently Active</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-skills-used">
+                        <span class="mini-tag">Enterprise Systems</span>
+                        <span class="mini-tag">Industry Experience</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Node: Prodigy Infotech -->
+            <div class="timeline-node timeline-node-left" data-year="2024">
+                <div class="timeline-dot">
+                    <div class="dot-pulse" aria-hidden="true"></div>
+                </div>
+                <div class="timeline-card glass-panel">
+                    <div class="timeline-card-header">
+                        <span class="timeline-type experience-type">Experience</span>
+                        <span class="timeline-date">2024</span>
+                    </div>
+                    <h3 class="timeline-title">Web Development Intern</h3>
+                    <h4 class="timeline-org">Prodigy Infotech</h4>
+                    <p class="timeline-desc">
+                        Intensive 1-month web development internship focused on building responsive, 
+                        modern web applications. Worked with HTML, CSS, JavaScript, and modern frameworks 
+                        to deliver production-ready interfaces.
+                    </p>
+                    <div class="timeline-visual" aria-hidden="true">
+                        <div class="browser-mockup">
+                            <div class="browser-bar">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                            </div>
+                            <div class="browser-content">
+                                <div class="code-line"><span class="hl-tag">&lt;div</span> <span class="hl-attr">class</span>=<span class="hl-string">"hero"</span><span class="hl-tag">&gt;</span></div>
+                                <div class="code-line indent"><span class="hl-tag">&lt;h1&gt;</span>Building the web<span class="hl-tag">&lt;/h1&gt;</span></div>
+                                <div class="code-line"><span class="hl-tag">&lt;/div&gt;</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-skills-used">
+                        <span class="mini-tag">HTML</span>
+                        <span class="mini-tag">CSS</span>
+                        <span class="mini-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Node: MCA -->
+            <div class="timeline-node timeline-node-right" data-year="2022-2024">
+                <div class="timeline-dot">
+                    <div class="dot-pulse" aria-hidden="true"></div>
+                </div>
+                <div class="timeline-card glass-panel">
+                    <div class="timeline-card-header">
+                        <span class="timeline-type education-type">Education</span>
+                        <span class="timeline-date">2022 – 2024</span>
+                    </div>
+                    <h3 class="timeline-title">Master of Computer Applications</h3>
+                    <h4 class="timeline-org">Galgotias University</h4>
+                    <p class="timeline-desc">
+                        Advanced studies in software engineering, data structures, algorithms, machine learning,
+                        cloud computing, and full-stack application development.
+                    </p>
+                    <div class="timeline-pillar education-pillar" aria-hidden="true">
+                        <div class="pillar-block pillar-mca"></div>
+                        <span class="pillar-label">MCA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Node: BCA -->
+            <div class="timeline-node timeline-node-left" data-year="2019-2022">
+                <div class="timeline-dot">
+                    <div class="dot-pulse" aria-hidden="true"></div>
+                </div>
+                <div class="timeline-card glass-panel">
+                    <div class="timeline-card-header">
+                        <span class="timeline-type education-type">Education</span>
+                        <span class="timeline-date">2019 – 2022</span>
+                    </div>
+                    <h3 class="timeline-title">Bachelor of Computer Applications</h3>
+                    <h4 class="timeline-org">Deen Dayal Upadhyay University</h4>
+                    <p class="timeline-desc">
+                        Foundation in computer science principles including programming, database management,
+                        networking, and web technologies. Built a strong base in Java, C++, and Python.
+                    </p>
+                    <div class="timeline-pillar education-pillar" aria-hidden="true">
+                        <div class="pillar-block pillar-bca"></div>
+                        <span class="pillar-label">BCA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Node: Schooling -->
+            <div class="timeline-node timeline-node-right" data-year="2017-2019">
+                <div class="timeline-dot">
+                    <div class="dot-pulse" aria-hidden="true"></div>
+                </div>
+                <div class="timeline-card glass-panel">
+                    <div class="timeline-card-header">
+                        <span class="timeline-type education-type">Education</span>
+                        <span class="timeline-date">2017 – 2019</span>
+                    </div>
+                    <h3 class="timeline-title">Senior Secondary Education</h3>
+                    <h4 class="timeline-org">Early Schooling Foundation</h4>
+                    <p class="timeline-desc">
+                        The beginning of a passion for technology and problem-solving. First exposure to 
+                        programming and computational thinking that ignited the journey ahead.
+                    </p>
+                    <div class="timeline-pillar education-pillar" aria-hidden="true">
+                        <div class="pillar-block pillar-school"></div>
+                        <span class="pillar-label">Foundation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- SECTION 5: CONTACT / FOOTER    -->
+    <!-- ============================== -->
+    <section id="contact" class="section contact-section">
+        <div class="section-header">
+            <span class="section-tag">05</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's build something extraordinary together</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Terminal Window -->
+            <div class="terminal-window glass-terminal" id="contact-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                    </div>
+                    <span class="terminal-title">ashutosh@portfolio:~</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-output">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">cat contact_info.json</span>
+                        </div>
+                        <div class="terminal-response">
+                            <pre class="contact-json">{
+  <span class="json-key">"name"</span>: <span class="json-string">"Ashutosh Dhar Dubey"</span>,
+  <span class="json-key">"role"</span>: <span class="json-string">"Software Developer"</span>,
+  <span class="json-key">"email"</span>: <span class="json-string">"dashutosh52@gmail.com"</span>,
+  <span class="json-key">"phone"</span>: <span class="json-string">"+91-9621745478"</span>,
+  <span class="json-key">"location"</span>: <span class="json-string">"Greater Noida, India"</span>,
+  <span class="json-key">"status"</span>: <span class="json-string">"Open to opportunities"</span>
+}</pre>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">echo "Send me a message 👇"</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form inside terminal -->
+                    <form class="terminal-form" id="contact-form" action="#" method="POST">
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">$</span>
+                            <label for="contact-name" class="sr-only">Your Name</label>
+                            <input type="text" id="contact-name" name="name" class="terminal-input" placeholder="enter your name..." required autocomplete="name">
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">$</span>
+                            <label for="contact-email" class="sr-only">Your Email</label>
+                            <input type="email" id="contact-email" name="email" class="terminal-input" placeholder="enter your email..." required autocomplete="email">
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">$</span>
+                            <label for="contact-message" class="sr-only">Your Message</label>
+                            <textarea id="contact-message" name="message" class="terminal-input terminal-textarea" placeholder="type your message..." required rows="3"></textarea>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">$</span>
+                            <button type="submit" class="terminal-submit" id="contact-submit">
+                                <span>send_message</span>
+                                <span class="submit-cursor">█</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info Cards -->
+            <div class="contact-info-grid">
+                <a href="mailto:dashutosh52@gmail.com" class="contact-card glass-panel" id="contact-email-card">
+                    <span class="contact-card-icon">📧</span>
+                    <span class="contact-card-label">Email</span>
+                    <span class="contact-card-value">dashutosh52@gmail.com</span>
+                </a>
+                <div class="contact-card glass-panel" id="contact-location-card">
+                    <span class="contact-card-icon">📍</span>
+                    <span class="contact-card-label">Location</span>
+                    <span class="contact-card-value">Greater Noida, India</span>
+                </div>
+                <div class="contact-card glass-panel" id="contact-status-card">
+                    <span class="contact-card-icon">🟢</span>
+                    <span class="contact-card-label">Status</span>
+                    <span class="contact-card-value">Available for hire</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Designed & Built by <strong>Ashutosh Dhar Dubey</strong> — 2024
+                </p>
+                <p class="footer-tagline">
+                    <span class="tagline-bracket">{</span>
+                    Defying gravity, one line of code at a time
+                    <span class="tagline-bracket">}</span>
+                </p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Scripts -->
+    <script src="scene.js"></script>
+    <script>
+        // Auto-initialize the 3D scene
+        if (window.AntiGravityScene) {
+            const container = document.getElementById('three-container');
+            if (container) window.AntiGravityScene.init(container);
+        }
+    </script>
+    <script src="interactions.js"></script>
+</body>
+</html>
